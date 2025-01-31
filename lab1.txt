@@ -2229,6 +2229,8 @@ drwxr-xr-x. 2 311u12 пользователи домена 4096 янв 30 10:47 
 type — это встроенная команда bash
 [311u12@311U12 ~]$ type ls
 ls — это псевдонимом для «ls --color=
+команда, которая сообщает тип указанной ей
+команды
 
 	[311u12@311U12 ~]$  type cp
 для cp вычислен хэш (/usr/bin/cp)
@@ -2239,10 +2241,13 @@ ls — это псевдонимом для «ls --color=
 
 	[311u12@311U12 ~]$ which cd
 	/usr/bin/cd
+определение местоположения
+выполняемого файла, ищет только исполняемые программы
 
 	[311u12@311U12 ~]$ help cd
 	cd: cd [-L|[-P [-e]] [-@]] [каталог]
 	Change the shell working directory.
+
 
 	Change the current directory to DIR.  The default DIR is the value of the
 	HOME shell variable. If DIR is "-", it is converted to $OLDPWD.
@@ -2275,6 +2280,7 @@ ls — это псевдонимом для «ls --color=
 	Exit Status:
 	Returns 0 if the directory is changed, and if $PWD is set successfully when
 	-P is used; non-zero otherwise.
+получение справки для встроенных команд
 
 	[311u12@311U12 ~]$ mkdir --help
 	Использование: mkdir [ПАРАМЕТР]… КАТАЛОГ…
@@ -2299,6 +2305,8 @@ ls — это псевдонимом для «ls --color=
 	Об ошибках в переводе сообщений сообщайте по адресу <https://translationproject.org/team/ru.html>
 	Полная документация: <https://www.gnu.org/software/coreutils/mkdir>
 	или доступная локально: info '(coreutils) mkdir invocation'
+
+Вывод инструкции по использованию
 
 	[311u12@311U12 ~]$  man ls
 
@@ -2377,7 +2385,23 @@ chfn(1),  chsh(1),  login(1), passwd(1), su(1), crypt(3), getpwent(3),
 	‘QUIT’
 	3.  Terminal quit.
 	‘ABRT’
+Вывод страниц справочного руководства
 
+[311u12@311U12 ~]$ apropos partition
+partition: ничего подходящего не найдено.
+Должна выводить список подходящих команд, но почекто не работает
+[311u12@311U12 ~]$ whatis ls
+ls: ничего подходящего не найдено.
+я не понимаю пояему не работает
+[311u12@311U12 ~]$ info
+file: dir,      Node: Top,      This is the top of the INFO tree.
+
+This is the Info main menu (aka directory node).
+A few useful Info commands:
+
+  'q' quits;
+
+вывод записи из справочного руководства Inf с гиперссылками
 	[311u12@311U12 ~]$ cd /usr; ls; cd -
 	bin    i686-w64-mingw32  lib    libexec  sbin   src  x86_64-w64-mingw32
 	games  include           lib64  local    share  tmp
